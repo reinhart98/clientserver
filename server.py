@@ -3,7 +3,7 @@ import socket
 host = '192.168.1.72 '
 port = 1234
 
-val = "you kenapa ko?"
+val = "Hi, i'm server"
 
 def serverSetting():
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -41,14 +41,14 @@ def dataTransfer(conn):
 		elif command == 'ULANG':
 			reply = ULANG(dataMessage)
 		elif command == 'EXIT':
-			print ('client telah off, darnit')
+			print ('client telah off')
 			break
 		elif command == 'KILL':
 			print('all off, bye')
 			s.close()
 			break
 		else:
-			reply = 'perintah apa itu'
+			reply = 'perintah tak diketahui'
 			
 		conn.sendall(str.encode(reply))
 		print('data terkirim')

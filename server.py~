@@ -57,8 +57,11 @@ def dataTransfer(conn):
 s = serverSetting()
 
 while True:
-	conn = koneksiSetting()
-	dataTransfer(conn)
+	try:
+		conn = koneksiSetting()
+		dataTransfer(conn)
+	except:
+		break
 	
 			
 	
